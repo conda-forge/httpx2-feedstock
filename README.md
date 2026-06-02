@@ -3,7 +3,7 @@ About httpx2-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/httpx2-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/pydantic/httpx2
+Home: https://pypi.org/project/httpx2
 
 Package license: BSD-3-Clause
 
@@ -147,4 +147,5 @@ Feedstock Maintainers
 =====================
 
 * [@Kludex](https://github.com/Kludex/)
+* [@bollwyvl](https://github.com/bollwyvl/)
 

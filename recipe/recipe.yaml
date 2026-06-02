@@ -1,7 +1,9 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
 schema_version: 1
 
 context:
-  version: "2.2.0"
+  version: "2.3.0"
+  python_check_max: "3.14"
 
 package:
   name: httpx2
@@ -9,29 +11,30 @@ package:
 
 source:
   url: https://pypi.org/packages/source/h/httpx2/httpx2-${{ version }}.tar.gz
-  sha256: f3428d59b1752b8f5629826277262fb4d65e3a683f48af8a5b16c4d012e0b801
+  sha256: 227e7c41d95a76d4077a52640564132777215fc3394e07b66a3116c33d668fa9
 
 build:
   noarch: python
   number: 0
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
   python:
     entry_points:
       - httpx2 = httpx2:main
 
 requirements:
   host:
-    - python ${{ python_min }}.*
-    - pip
-    - hatchling
     - hatch-fancy-pypi-readme
-    - uv-dynamic-versioning >=0.7.0
+    - hatchling
+    - pip
+    - python ${{ python_min }}.*
+    - uv-dynamic-versioning >=0.8.0
   run:
-    - python >=${{ python_min }}
     - anyio
-    - certifi
     - httpcore2 ==${{ version }}
     - idna
+    - python >=${{ python_min }}
+    - truststore >=0.10
   run_constraints:
     - click 8.*
     - pygments 2.*
@@ -56,27 +59,26 @@ requirements:
 
 tests:
   - python:
-      imports:
-        - httpx2
+      imports: httpx2
+      pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - "*"
-      pip_check: true
+        - ${{ python_check_max }}.*
   - requirements:
       run:
-        - python ${{ python_min }}.*
         - click 8.*
+        - python ${{ python_min }}.*
         - pygments 2.*
         - rich >=10,<15
     script:
-      - if: win
-        then:
-          - set PYTHONIOENCODING=utf-8
-          - set PYTHONUTF8=1
-      - httpx2 --help
+      env:
+        PYTHONIOENCODING: utf-8
+        PYTHONUTF8: "1"
+      content:
+        - httpx2 --help
 
 about:
-  homepage: https://github.com/pydantic/httpx2
+  homepage: https://pypi.org/project/httpx2
   summary: The next generation HTTP client.
   license: BSD-3-Clause
   license_file: LICENSE.md
