@@ -34,7 +34,7 @@ requirements:
     - httpcore2 ==${{ version }}
     - idna
     - python >=${{ python_min }}
-    - truststore>=0.10
+    - truststore >=0.10
   run_constraints:
     - click 8.*
     - pygments 2.*
