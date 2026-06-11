@@ -32,9 +32,10 @@ requirements:
   run:
     - anyio
     - httpcore2 ==${{ version }}
-    - idna
+    - idna >=3.18
     - python >=${{ python_min }}
     - truststore >=0.10
+    - typing_extensions >=4.5.0
   run_constraints:
     - click 8.*
     - pygments 2.*
