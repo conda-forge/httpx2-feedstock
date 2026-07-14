@@ -37,11 +37,12 @@ requirements:
     - truststore >=0.10
     - typing_extensions >=4.5.0
   run_constraints:
-    - click 8.*
+    - click >=8.4
     - pygments 2.*
     - rich >=10,<16
     - h2 >=3,<5
     - socksio 1.*
+    - wsproto >=1.2
     - zstandard >=0.18.0
   # depends on https://github.com/conda/ceps/pull/146
   # extras:
@@ -67,7 +68,7 @@ tests:
         - ${{ python_check_max }}.*
   - requirements:
       run:
-        - click 8.*
+        - click >=8.4
         - python ${{ python_min }}.*
         - pygments 2.*
         - rich >=10,<16
