@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.5.0"
+  version: "2.6.0"
   python_check_max: "3.14"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/h/httpx2/httpx2-${{ version }}.tar.gz
-  sha256: e2df9cb4611021527ff8a675b1c320b610a2ec397acc8d6fe6e91df2d9b33c29
+  sha256: 5d362fd59562cf2139a60c67bb016587a70b36156a517f176c7cbf1587d1ab22
 
 build:
   noarch: python
@@ -37,11 +37,12 @@ requirements:
     - truststore >=0.10
     - typing_extensions >=4.5.0
   run_constraints:
-    - click 8.*
+    - click >=8.4
     - pygments 2.*
     - rich >=10,<16
     - h2 >=3,<5
     - socksio 1.*
+    - wsproto >=1.2
     - zstandard >=0.18.0
   # depends on https://github.com/conda/ceps/pull/146
   # extras:
@@ -67,7 +68,7 @@ tests:
         - ${{ python_check_max }}.*
   - requirements:
       run:
-        - click 8.*
+        - click >=8.4
         - python ${{ python_min }}.*
         - pygments 2.*
         - rich >=10,<16
