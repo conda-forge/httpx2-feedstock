@@ -11,7 +11,7 @@ recipe:
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -22,7 +22,6 @@ outputs:
       sha256: 9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648
     build:
       noarch: python
-      number: 0
       script:
         - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
     requirements:
