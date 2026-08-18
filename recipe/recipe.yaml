@@ -13,6 +13,10 @@ build:
   noarch: python
   number: 1
 
+source:
+  url: https://raw.githubusercontent.com/pydantic/httpx2/refs/tags/v${{ version }}/LICENSE.md
+  sha256: 7e7d6dbaf7fe160d39fd6e84fd02c33cab96bcbea34d36998d545bceb4a19c30
+
 outputs:
   - package:
       name: httpcore2
@@ -50,7 +54,6 @@ outputs:
     about:
       homepage: https://pypi.org/project/httpcore2
       summary: A minimal low-level HTTP client.
-      license_file: LICENSE.md
 
   - package:
       name: httpx2
@@ -110,6 +113,7 @@ about:
   summary: The next generation HTTP client.
   license: BSD-3-Clause
   repository: https://github.com/pydantic/httpx2
+  license_file: LICENSE.md
 
 extra:
   feedstock-name: httpx2
