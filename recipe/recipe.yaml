@@ -14,19 +14,21 @@ build:
   number: 1
 
 source:
-  url: https://raw.githubusercontent.com/pydantic/httpx2/refs/tags/v${{ version }}/LICENSE.md
-  sha256: 7e7d6dbaf7fe160d39fd6e84fd02c33cab96bcbea34d36998d545bceb4a19c30
+  - target_directory: httpcore2
+    url: https://pypi.org/packages/source/h/httpcore2/httpcore2-${{ version }}.tar.gz
+    sha256: 9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648
+  - target_directory: httpx2
+    url: https://pypi.org/packages/source/h/httpx2/httpx2-${{ version }}.tar.gz
+    sha256: 7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf
 
 outputs:
   - package:
       name: httpcore2
       version: ${{ version }}
-    source:
-      url: https://pypi.org/packages/source/h/httpcore2/httpcore2-${{ version }}.tar.gz
-      sha256: 9293522bba0aa7c4c8e9e3f040c16575bd8868e155a77fa30c7a9085a5eae648
     build:
       noarch: python
       script:
+        - cd httpcore2
         - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
     requirements:
       host:
@@ -54,14 +56,13 @@ outputs:
     about:
       homepage: https://pypi.org/project/httpcore2
       summary: A minimal low-level HTTP client.
+      license_file: httpcore2/LICENSE.md
 
   - package:
       name: httpx2
-    source:
-      url: https://pypi.org/packages/source/h/httpx2/httpx2-${{ version }}.tar.gz
-      sha256: 7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf
     build:
       script:
+        - cd httpx2
         - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
       python:
         entry_points:
@@ -113,7 +114,7 @@ about:
   summary: The next generation HTTP client.
   license: BSD-3-Clause
   repository: https://github.com/pydantic/httpx2
-  license_file: LICENSE.md
+  license_file: httpx2/LICENSE.md
 
 extra:
   feedstock-name: httpx2
