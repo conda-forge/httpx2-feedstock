@@ -9,10 +9,6 @@ recipe:
   name: httpx2-split
   version: ${{ version }}
 
-build:
-  noarch: python
-  number: 1
-
 source:
   - target_directory: httpcore2
     url: https://pypi.org/packages/source/h/httpcore2/httpcore2-${{ version }}.tar.gz
@@ -20,6 +16,10 @@ source:
   - target_directory: httpx2
     url: https://pypi.org/packages/source/h/httpx2/httpx2-${{ version }}.tar.gz
     sha256: 7631fe9887a8a2275f4a2540e053aa670fcc50742864a9ae7c66e609fdcf12cf
+
+build:
+  noarch: python
+  number: 1
 
 outputs:
   - package:
