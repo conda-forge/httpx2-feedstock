@@ -3,6 +3,21 @@ About httpx2-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/httpx2-feedstock/blob/main/LICENSE.txt)
 
+
+About httpx2
+------------
+
+Home: https://pypi.org/project/httpcore2
+
+Package license: BSD-3-Clause
+
+Summary: A minimal low-level HTTP client.
+
+Development: https://github.com/pydantic/httpx2
+
+About httpx2
+------------
+
 Home: https://pypi.org/project/httpx2
 
 Package license: BSD-3-Clause
@@ -30,6 +45,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-httpcore2-green.svg)](https://anaconda.org/conda-forge/httpcore2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/httpcore2.svg)](https://anaconda.org/conda-forge/httpcore2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/httpcore2.svg)](https://anaconda.org/conda-forge/httpcore2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/httpcore2.svg)](https://anaconda.org/conda-forge/httpcore2) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-httpx2-green.svg)](https://anaconda.org/conda-forge/httpx2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/httpx2.svg)](https://anaconda.org/conda-forge/httpx2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/httpx2.svg)](https://anaconda.org/conda-forge/httpx2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/httpx2.svg)](https://anaconda.org/conda-forge/httpx2) |
 
 Installing httpx2
@@ -49,7 +65,7 @@ How to use
 <summary>With conda</summary>
 
 ```
-conda install httpx2
+conda install httpcore2 httpx2
 ```
 
 </details>
@@ -58,7 +74,7 @@ conda install httpx2
 <summary>With mamba</summary>
 
 ```
-mamba install httpx2
+mamba install httpcore2 httpx2
 ```
 
 </details>
@@ -68,9 +84,9 @@ mamba install httpx2
 
 ```
 # for adding to your local project
-pixi add httpx2
+pixi add httpcore2 httpx2
 # for installing globally
-pixi global install httpx2
+pixi global install httpcore2 httpx2
 ```
 
 </details>
@@ -78,13 +94,13 @@ pixi global install httpx2
 Search package versions
 -----------------------
 
-It is possible to list all of the versions of `httpx2` available on your platform:
+It is possible to list all of the versions of `httpcore2` available on your platform:
 
 <details>
 <summary>With conda</summary>
 
 ```
-conda search httpx2 --channel conda-forge
+conda search httpcore2 --channel conda-forge
 ```
 
 </details>
@@ -93,7 +109,7 @@ conda search httpx2 --channel conda-forge
 <summary>With mamba</summary>
 
 ```
-mamba search httpx2 --channel conda-forge
+mamba search httpcore2 --channel conda-forge
 ```
 
 </details>
@@ -102,7 +118,7 @@ mamba search httpx2 --channel conda-forge
 <summary>With pixi</summary>
 
 ```
-pixi search httpx2 --channel conda-forge
+pixi search httpcore2 --channel conda-forge
 ```
 
 </details>
@@ -112,13 +128,13 @@ pixi search httpx2 --channel conda-forge
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search httpx2 --channel conda-forge
+mamba repoquery search httpcore2 --channel conda-forge
 
-# List packages depending on `httpx2`:
-mamba repoquery whoneeds httpx2 --channel conda-forge
+# List packages depending on `httpcore2`:
+mamba repoquery whoneeds httpcore2 --channel conda-forge
 
-# List dependencies of `httpx2`:
-mamba repoquery depends httpx2 --channel conda-forge
+# List dependencies of `httpcore2`:
+mamba repoquery depends httpcore2 --channel conda-forge
 ```
 
 </details>
