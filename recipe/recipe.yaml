@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.14.0"
+  version: "2.15.1"
   python_check_max: "3.15"
   uv_dynamic_versioning_min: "0.14.1"
   pip_install: -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
@@ -14,10 +14,10 @@ recipe:
 source:
   - target_directory: httpcore2
     url: https://pypi.org/packages/source/h/httpcore2/httpcore2-${{ version }}.tar.gz
-    sha256: 4f57a1a8249fe6af589d935cfd456f1d13bbdcb0f0fc72af9142368fc94811d7
+    sha256: a94b6b3e6260e1a3f035915408d3dcd7dc8e844c2b544b642e227cf98a747af0
   - target_directory: httpx2
     url: https://pypi.org/packages/source/h/httpx2/httpx2-${{ version }}.tar.gz
-    sha256: 47ad61a3c40282cd8d0dc96311531f00f5bfc71a066c6fe3b36d8f63fb9e4f6e
+    sha256: ff75485308fbe441e75b1218546e4e78d884df41e1a9741c1f79335ed8fcfef7
 
 build:
   noarch: python
